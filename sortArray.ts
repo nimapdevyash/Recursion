@@ -1,3 +1,6 @@
+// this approch is similar for stack as well infact you could use the same code ,
+// as we are using the same functions as stack methods so it's fine.
+
 function sortArray(arr: number[]): void {
   if (arr.length <= 1) {
     return;
