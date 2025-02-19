@@ -4,6 +4,9 @@
 
 // to note such key things it's really important to draw the recursive tree and carefully look at our options and what choices can we make.
 
+// why we decided to use recursion here ?
+// we hade the choises eaither to use open brackets or close ones and thus had to make some decisions at every point , hence we concluded to use the recursion and recursive approach of choices and decisions to be specific.
+
 // function to generate all possible balanced paranthesis combinations
 function generateBalancedParanthesis(
   opening: number,
