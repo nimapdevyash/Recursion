@@ -16,20 +16,17 @@ function generateBalancedParanthesis(
     return;
   }
 
-  // we can only append the closing brackets only when we have more of them than opening ones
+  // this if condition prevents the infinite recursion
+  // we could always use opening paranthesis as closing paranthesis can then balance them out
+  if (opening > 0) {
+    generateBalancedParanthesis(opening - 1, closing, output + "(");
+  }
+
+  // we can only append the closing brackets when we have more of them than opening ones
   // essentially we can only use them to balance the string
   if (opening < closing) {
     generateBalancedParanthesis(opening, closing - 1, output + ")");
-
-    // note we need this condition as 0 < 1 and if not for this condition the opening -1 would take the opening value below zero and it'll go infinite
-    // the same is not required for closing braces as they will be exausted at last and will reduce by one so hence they will hit the base condition and not cause infinite loop
-    if (opening > 0) {
-      generateBalancedParanthesis(opening - 1, closing, output + "(");
-    }
   }
-
-  // we can use opening parantheses everytime as then can be balanced later by closing ones
-  else generateBalancedParanthesis(opening - 1, closing, output + "(");
 }
 
 function balancedParanthesis(numberOfParanthesis: number): void {
